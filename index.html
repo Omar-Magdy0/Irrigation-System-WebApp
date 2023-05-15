@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO IRRIGATION APP</title>
+    <link rel="stylesheet" href="Irrigation.css">
+    <script src="Irrigation.js" defer></script>
+    <link rel="shortcut icon" href="OIP.jpeg" />
+</head>
+
+<body>
+    <div id="navBar">
+    <button class="navbox" id="connect" >Connect</button>
+    <div class="navbox" style="margin-left: 5px;"><span>Baud
+
+        <select id="baud">
+          <option>4800</option>
+          <option>9600</option>
+          <option>19200</option>
+          <option>38400</option>
+          <option>57600</option>
+          <option>115200</option>
+        </select></div>
+    <div class="IrrigateMe" style="color: #effbff;font-size: 26px ; width : fit-content;height: fit-content;display: inline;left: 30%;position: relative;">IRRIGATE ME</div>
+    </div>
+    
+    <div id="dicMessage" style="margin: auto;width: fit-content;top: 130px;position: relative;">
+    DISCONNECTED &nbsp; &nbsp;:( </div>
+
+<div id="mainBox">
+    <div id="settingsContainer">
+        <div style="display: flex;flex-direction: column;width: 65%;height: 100%;">
+            <div class="crop">
+             <div style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6) ;border-radius: 10px 10px 0 0 ;"> 
+                <span style="font-size: 28px;margin: 10px;">Crop 1</span> <div id="farmedCrop1" class="cropbx"></div>
+     
+            </div>
+            <div class="opt"></div>
+            </div>
+            <div class="crop">
+              <div  style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6);border-radius: 10px 10px 0 0;">  
+                <span style="font-size: 28px;margin: 10px;">Crop 2</span><div id="farmedCrop2" class="cropbx"></div>
+
+              </div>
+              <div class="opt"></div>
+            </div>
+        </div>
+        <div id="readingsBox">
+            <div class="moistureReading"></div>
+            <div class="moistureReading"></div>
+        </div>
+    </div>
+
+    <div id="controlUnit">
+
+       <div style="grid-area: c1;"><div class="controlUnitsub" > <div class="controlUnitsubsub"><label for="cropsChoose1" style="float: left; margin: 10px;font-size: 26px;color:#ffffff">Crop 1 </label>
+            <select name="cropsChoose1" class="cropsChoose"  style="display: inline-block;">
+                <option value="banana"  >banana</option>     
+                <option value="watermelon"      >watermelon</option>
+                <option value="melon" >melon</option>
+                <option value="cashew"  >cashew</option>
+                <option value="rice">rice</option>
+                <option value="asparagus"     >asparagus</option>
+                <option value="raspberry"     >raspberry</option>
+                <option value="grape" >grape</option>
+                <option value="cranberry"     >cranberry</option>
+                <option value="mint">mint</option>
+                <option value="cucumber"    >cucumber</option>
+                <option value="tomato"  >tomato</option>
+                <option value="lettuce"   >lettuce</option>
+                <option value="cashew"  >cashew</option>
+                <option value="celery"  >celery</option>
+                <option value="carrot"  >carrot</option>
+                <option value="apple" >apple</option>
+                <option value="spinach"   >spinach</option>
+                <option value="cauliflowe"       >cauliflower</option>
+                <option value="beans" >beans</option>
+                <option value="figs">figs</option>
+                <option value="potato"  >potato</option>
+                <option value="onion" >onion</option>
+                <option value="strawberry"      >strawberry</option>
+                <option value="raddish"   >raddish</option>
+                <option value="sweet" >sweet potatoes</option>
+                <option value="lentils"   >lentils</option>
+                <option value="bell">bell</option>
+                <option value="eggplant"    >eggplant</option>
+                <option value="kale">kale </option>  
+            </select>  </div>
+
+             <div class="controlUnitsubsub">   
+                <label for="cropsChoose2" style="float:left;margin: 10px;font-size: 26px;color:#ffffff">Crop 2 </label>
+                <select  name="cropsChoose2" class="cropsChoose" style="display: inline-block;">
+
+                        <option value="banana"  >banana</option>     
+                        <option value="watermelon"      >watermelon</option>
+                        <option value="melon" >melon</option>
+                        <option value="cashew"  >cashew</option>
+                        <option value="rice">rice</option>
+                        <option value="asparagus"     >asparagus</option>
+                        <option value="raspberry"     >raspberry</option>
+                        <option value="grape" >grape</option>
+                        <option value="cranberry"     >cranberry</option>
+                        <option value="mint">mint</option>
+                        <option value="cucumber"    >cucumber</option>
+                        <option value="tomato"  >tomato</option>
+                        <option value="lettuce"   >lettuce</option>
+                        <option value="cashew"  >cashew</option>
+                        <option value="celery"  >celery</option>
+                        <option value="carrot"  >carrot</option>
+                        <option value="apple" >apple</option>
+                        <option value="spinach"   >spinach</option>
+                        <option value="cauliflowe"       >cauliflower</option>
+                        <option value="beans" >beans</option>
+                        <option value="figs">figs</option>
+                        <option value="potato"  >potato</option>
+                        <option value="onion" >onion</option>
+                        <option value="strawberry"      >strawberry</option>
+                        <option value="raddish"   >raddish</option>
+                        <option value="sweet" >sweet potatoes</option>
+                        <option value="lentils"   >lentils</option>
+                        <option value="bell">bell</option>
+                        <option value="eggplant"    >eggplant</option>
+                        <option value="kale">kale </option>                
+                </select>
+             </div>
+             <div class="controlUnitsubsub"><label id="chzInterval" for="interval" style="color:white;font-size: 24px;margin:10px;" >Pump Interval</label><input name="interval" id="chzInterval" class="inputfield" ></div>
+             <div class="controlUnitsubsub"> 
+                
+                <div id="resetButton" class="controlButton"><span>RESET</span></div>
+                <div id="manualMode" class="controlButton"><span>MANUAL MODE</span></div>
+             </div></div>
+
+            </div>            
+
+    <div style="grid-area: c2;display:grid;">  <div class="controlUnitsub" >  
+<div id="showContainer">
+<div id="showScreen"></div>
+<input id="writeScreen"></input>
+</div>
+
+
+
+
+
+
+
+
+
+    </div></div>
+    </div>
+</div>
+</body>
+</html>
+
+
