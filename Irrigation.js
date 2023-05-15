@@ -35,6 +35,8 @@ window.onload = async function() {
     chzfarmed1 = document.getElementsByName('cropsChoose1');chzfarmed2 = document.getElementsByName('cropsChoose2');chzInterval = document.getElementById('chzInterval');
     farmedCrop1= document.getElementById('farmedCrop1');farmedCrop2= document.getElementById('farmedCrop2')
 
+
+    
     optimal1 = optimal[0];optimal2 = optimal[1];
     optimal1txt = document.createElement('pre');optimal2txt=document.createElement('pre');
     crop1 = crop[0];crop2 = crop[1];moisture1 = moistureReading[0];moisture2 = moistureReading[1];  
@@ -65,7 +67,7 @@ msg.style.display = "none";
 
 
 
-
+var chzfarmed1val = 0,chzfarmed2val = 0;
 
 
 
@@ -79,18 +81,19 @@ async function read(){ const textDecoder = new TextDecoderStream();
   const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
   const reader = textDecoder.readable.getReader();
 // Listen to data coming from the serial device.
-for(;true;) {
+for(;true;) {chzfarmed1val = chzfarmed1[0].value ; chzfarmed2val = chzfarmed2[0].value;chzIntervalval = chzInterval.value;
   const { value, done } = await reader.read();
   if (done) {
     // Allow the serial port to be closed later.
     reader.releaseLock();
     break;
   }
-  chzfarmed1val = chzfarmed1[0].value ; chzfarmed2val = chzfarmed2[0].value;
+  
+ 
   if(i>=600){i=0;infoBoy(disp);disp="";}
   disp+=value;i++;if(mnl == 1){manualButton.style.backgroundColor = "#0066ff";}else{manualButton.style.backgroundColor = "#971212";}
 tmp +=value
-  if(z>=100){z=0;showScreen.innerHTML=  tmp;tmp = 0}
+  if(z>=100){z=0;showScreen.innerText=  tmp;tmp = 0}
   z++;
 
 
@@ -109,11 +112,11 @@ async function write (x){
 
 //functions to control the Irrigation System
 
-function setFarmSettings(crop1,crop2,interval){
-  write("1"+"\n\n\n\n"+crop1+"\n"+crop2+"\n"+interval+"\n\n"+"\n")}
+function setFarmSettings(type,value){
+  write("1");write("\n");write(type);write("\n");write(value);write("\n")}
 
-function manualToggle(x){write("2"+"\n"+x+"\n\n");}
-function reset(){write("2"+"\n\n"+"rst"+"\n\n"+"y"+"\n\n")}
+function manualToggle(x){write("2");write("\n");write(x);write("\n");}
+function reset(){write("2");write("\n");write("rst");write("\n");write("y");write("\n")}
 function mnlCntrl(x){write("3"+"\n\n"+x+"\n\n")}
 
 function infoBoy(x){var realdata = [];var realdatai = 0;var index = 0;
@@ -123,7 +126,7 @@ for(index;x[index]!="^";index++){}
 index++;
 for(index;x[index]!="^";index++){realdata[realdatai++] = x[index];}
 realdatai=0;
-if((realdata.length<=400)&&(realdata.length>=3)){
+if((realdata.length<=50)&&(realdata.length>=3)){
 mnl = realdata[realdatai++]
 p = realdata[realdatai++]
 s1 = realdata[realdatai++]
@@ -155,18 +158,18 @@ farmedCrop1.innerText = c1;farmedCrop2.innerText = c2;
 if(mnl == 1){manualButton.style.backgroundColor = "#0066ff";}else{manualButton.style.backgroundColor = "#971212";}
 
 }}
-manualButton.addEventListener('click',()=>{;if(mnl == 1){manualButton.style.backgroundColor = "#0066ff";manualToggle("\n"+"auto")};if(mnl == 0){manualButton.style.backgroundColor = "#971212";manualToggle("\n"+"mnl")}})
+manualButton.addEventListener('click',()=>{;if(mnl == 1){manualButton.style.backgroundColor = "#0066ff";manualToggle("auto")};if(mnl == 0){manualButton.style.backgroundColor = "#971212";manualToggle("mnl")}})
 resestButton.addEventListener('click',reset)
 
  
 
 writeScreen.addEventListener("keydown",(e)=>{if(e.key === "Enter"){inp = writeScreen.value;writer.write(inp+"\n");console.log(inp);writeScreen.value = '';}});
 
-
+ chzfarmed1[0].addEventListener ("focusout",()=>{setFarmSettings("c1",chzfarmed1val)})
+ chzfarmed2[0].addEventListener ("focusout",()=>{setFarmSettings("c2",chzfarmed2val,)})
+ chzInterval.addEventListener("blur",()=>{setFarmSettings("p",chzIntervalval)})
 
 read();
-
-
 
 
 
