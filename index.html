@@ -13,7 +13,7 @@
 <body>
     <div id="navBar">
     <button class="navbox" id="connect" >Connect</button>
-    <div class="navbox" style="margin-left: 5px;"><span>Baud
+    <div class="navbox" style="margin-left: 5px;"><span style="display: block;">Baud
 
         <select id="baud">
           <option>4800</option>
@@ -23,25 +23,25 @@
           <option>57600</option>
           <option>115200</option>
         </select></div>
-    <div class="IrrigateMe" style="color: #effbff;font-size: 26px ; width : fit-content;height: fit-content;display: inline;left: 30%;position: relative;">IRRIGATE ME</div>
+    <div class="IrrigateMe">IRRIGATE ME</div>
     </div>
     
-    <div id="dicMessage" style="margin: auto;width: fit-content;top: 130px;position: relative;">
+    <div id="dicMessage" >
     DISCONNECTED &nbsp; &nbsp;:( </div>
 
 <div id="mainBox">
     <div id="settingsContainer">
         <div style="display: flex;flex-direction: column;width: 65%;height: 100%;">
             <div class="crop">
-             <div style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6) ;border-radius: 10px 10px 0 0 ;"> 
-                <span style="font-size: 28px;margin: 10px;">Crop 1</span> <div id="farmedCrop1" class="cropbx"></div>
+             <div style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6) ;padding: 10px;border-radius: 10px 10px 0 0 ;"> 
+                <span style="margin: 10px;">Crop 1</span> <div id="farmedCrop1" class="cropbx"></div>
      
             </div>
             <div class="opt"></div>
             </div>
             <div class="crop">
-              <div  style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6);border-radius: 10px 10px 0 0;">  
-                <span style="font-size: 28px;margin: 10px;">Crop 2</span><div id="farmedCrop2" class="cropbx"></div>
+              <div  style="display: flex;align-items: center;background-color: rgba(0, 0, 0, 0.6);border-radius: 10px 10px 0 0;padding:10px">  
+                <span style="margin: 10px;">Crop 2</span><div id="farmedCrop2" class="cropbx"></div>
 
               </div>
               <div class="opt"></div>
@@ -55,7 +55,7 @@
 
     <div id="controlUnit">
 
-       <div style="grid-area: c1;"><div class="controlUnitsub" > <div class="controlUnitsubsub"><label for="cropsChoose1" style="float: left; margin: 10px;font-size: 26px;color:#ffffff">Crop 1 </label>
+       <div style="grid-area: c1;"><div class="controlUnitsub" > <div class="controlUnitsubsub"><label for="cropsChoose1" style="float: left; margin: 10px;color:#ffffff">Crop 1 </label>
             <select name="cropsChoose1" class="cropsChoose"  style="display: inline-block;">
                 <option value="banana"  >banana</option>     
                 <option value="watermelon"      >watermelon</option>
@@ -90,7 +90,7 @@
             </select>  </div>
 
              <div class="controlUnitsubsub">   
-                <label for="cropsChoose2" style="float:left;margin: 10px;font-size: 26px;color:#ffffff">Crop 2 </label>
+                <label for="cropsChoose2" style="float:left;margin: 10px;color:#ffffff">Crop 2 </label>
                 <select  name="cropsChoose2" class="cropsChoose" style="display: inline-block;">
 
                         <option value="banana"  >banana</option>     
@@ -125,7 +125,7 @@
                         <option value="kale">kale </option>                
                 </select>
              </div>
-             <div class="controlUnitsubsub"><label for="interval" style="color:white;font-size: 24px;margin:10px;" >Pump Interval</label><input type="number" name="interval" min="100" max="500" id="chzInterval" class="inputfield" ></div>
+             <div class="controlUnitsubsub"><label for="interval" style="color:white;margin:10px;text-align: center;" >Pump Interval</label><input type="number" name="interval" min="100" max="500" id="chzInterval" class="inputfield" ></div>
              <div class="controlUnitsubsub"> 
                 
                 <div id="resetButton" class="controlButton"><span>RESET</span></div>
