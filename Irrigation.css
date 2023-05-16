@@ -1,13 +1,13 @@
 html{width: 100%;height: 100%;}
-body{width: 100%;height: 100%;margin: 0;background-color: rgb(109, 109, 109);font-family: 'Times New Roman', Times, serif; }
+body{width: 100%;height: 100%;margin: 0;background-color: rgb(109, 109, 109);font-family: 'Times New Roman', Times, serif;font-size: 25px; }
 #displayer{width:100%;height: calc(100% - 70px);display :fixed;position: fixed;font-size: inherit;overflow-y: hidden;z-index: -1;top: 70px;}
-.navbox{all: unset;height: 100%;aspect-ratio: 1.5/1;font-size: 20px;text-align: center;display: flex;align-items: center;justify-content: center;background-color: rgb(255, 255, 255);}
+.navbox{all: unset;height: 100%;aspect-ratio: 15/1;text-align: center;display: flex;align-items: center;justify-content: center;background-color: rgb(255, 255, 255);}
 #navBar{width: 100%;aspect-ratio: 18/1;background-color: rgb(126, 195, 255);position: fixed;display: flex;align-items: center;}
 #connect:active{background-color: rgba(185, 185, 185, 0.918);}
 #settingsContainer{width: 100%;height: 65%;z-index: 2;background-color: rgba(255, 255, 255, 0.295);position: relative;display: flex;}
-#mainBox{width: 100%;position: relative;display: none;}
-.opt{border-radius:10px;background-color: rgba(0, 0, 0, 0.6);color: #ffffff;padding: 20px;font-size: 28px;font-family: 'Times New Roman', Times, serif;line-break: auto; max-width: 80%;font-style: normal ;}
-.moistureReading{aspect-ratio: 1/1;width: 40%;display:inline-block;border-radius: 50%;margin: auto;background: #ffd67f46 url('moisturebg.gif') no-repeat center center;background-size: cover;
+#mainBox{width: 100%;position: relative;display: block;}
+.opt{border-radius:10px;background-color: rgba(0, 0, 0, 0.6);color: #ffffff;padding: 20px;font-family: 'Times New Roman', Times, serif;line-break: auto; max-width: 80%;font-style: normal ;}
+.moistureReading{aspect-ratio: 1/1;width: 50px;display:inline-block;border-radius: 50%;margin: auto;background: #ffd67f46 url('moisturebg.gif') no-repeat center center;background-size: cover;
   display :flex;justify-content: center;align-items: center;font-size: 40px;border-color: rgba(0, 0, 0, 0.26);border-width: 2px;border-style: solid;color:#ffffff;background-blend-mode: darken;font-weight:bold;}
 #controlUnit{width: 100%;  display: grid; overflow-y: auto;
   grid-template-columns: 40% 60%; justify-content: space-around;
@@ -16,28 +16,49 @@ body{width: 100%;height: 100%;margin: 0;background-color: rgb(109, 109, 109);fon
   grid-template-areas: 
     "c1 c2"; ;height:35%;background-color: rgba(0, 0, 0, 0.81);}
 
+#dicMessage{top:200px;position: relative;margin: auto;width: fit-content;font-size: 40px;}
 
-
-    .cropsChoose{ font-size: 26px;text-align: center;width: 50%;border-radius: 7px;border: none;}
+    .cropsChoose{ text-align: center;width: 50%;border-radius: 7px;border: none;}
   #readingsBox{width: 35%;display: flex;align-items: enter;justify-content: center;height: 100%;flex-direction: column;}
 .crop{width: calc(100% - 60px);padding: 30px;height: calc(50% - 60px);display: flex;flex-direction: column;justify-content: center;align-items: center;color: rgb(255, 255, 255);}
-.cropbx{background-color: white;font-size: 24px;color: black ;width: 150px;height: 40px;display: flex;align-items: center;justify-content: center;margin: 7px;}
+.cropbx{background-color: white;color: black ;width: 150px;height: 40px;display: flex;align-items: center;justify-content: center;margin: 7px;}
 .inputfield{all:unset;width: 47%;height: 25px;background-color: #ffffff;padding:1.5%;font-size: 24px;text-align: center;border-radius: 7px;}
 .controlUnitsubsub{display: flex;justify-content: space-evenly;align-items: center;width: 90%;padding: 2%;height: 16%;}
 #manualMode:hover{background-color: rgb(255, 255, 255);}
-.controlButton{height: 95%;width: 40%;background-color: rgba(202, 183, 155, 0.849);display:flex;text-align: center;justify-content: space-evenly;align-items: center;font-size: 18px;border-radius: 5px;}
+.controlButton{height: 95%;width: 40%;background-color: rgba(202, 183, 155, 0.849);display:flex;text-align: center;justify-content: space-evenly;align-items: center;border-radius: 5px;}
 .controlButton:active{background-color:rgb(56, 56, 56) ;}
 .cropsChoose:focus{background-color: rgba(145, 145, 145, 0.582);color:#ffffff}
 .inputfield:focus{background-color: rgba(155, 155, 155, 0.671);color: #ffffff;}
 .controlUnitsub{width:100%;height: 100%;}
+.IrrigateMe{color: #effbff; width : fit-content;height: fit-content;display: inline;left: 30%;position: relative;}
 
 
 
 
-
-#showScreen{font-size: 25px;word-break: break-all;width: 95%;height : 70%; margin : auto;overflow-y :auto;z-index : 2;padding : 2.5% ;background-color: rgba(240, 230, 140, 0.685);font-family: 'Times New Roman', Times, serif;}
+#showScreen{word-break: break-all;width: 95%;height : 70%; margin : auto;overflow-y :auto;z-index : 2;padding : 2.5% ;background-color: rgba(240, 230, 140, 0.685);font-family: 'Times New Roman', Times, serif;}
 #showContainer{width : 99% ;height : 80%; margin : 0.5%; z-index : 1 ;background-color : white;overflow-y :none;position: relative;background-color: rgba(0, 0, 0, 0);}
-#writeScreen{font-size: 25px;border: none;display: block;width: 97% ;height : 20%; margin : auto;overflow-y :auto;background-color:rgba(200, 200, 200, 0.9);padding : 1.5%;border : 0px ;color:black;font-family : 'Times New Roman', Times, serif}
+#writeScreen{border: none;display: block;width: 97% ;height : 20%; margin : auto;overflow-y :auto;background-color:rgba(200, 200, 200, 0.9);padding : 1.5%;border : 0px ;color:black;font-family : 'Times New Roman', Times, serif}
+
+
+
+
+@media screen and (max-height: 1920px) { 
+  #navBar{aspect-ratio: 10/1;font-size: 40px;text-align: center;}
+  .navbox{width: 30%;}
+  body{font-size: 55px;} 
+  #writeScreen{font-size: 55px;}
+  #showContainer{font-size: 55px;height: 100%;}
+  #baud{height: 70px;font-size: 40px;width: 60%;background-color: gainsboro;}
+  .moistureReading{width: 80%;}
+  .IrrigateMe{left: 70px;}
+  .moistureReading{font-size: 70px;}
+  .cropbx{width: fit-content;padding: 15px;}
+  .controlUnit{font-size: 45px;}
+  .controlUnitsubsub{height: 20%;padding: 2.5%;margin: none;font-size: 45px;width: 100%;width: 95%;}
+  .controlButton{padding: 10px;font-size: 40px;}
+  .cropsChoose{font-size: 40px;width: fit-content;padding: 10px;}
+  #chzInterval{font-size: 60px;width: fit-content;padding:10px;height: fit-content;}
+}
 
 
 
